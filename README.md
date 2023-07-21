@@ -22,6 +22,8 @@ We learned to organize a big problem in different submodules, determine interfac
 * inspecting the last exit code with $?
 * quote handling
 
+Read minishell.pdf (LINK) for detailed project instruction. 
+
 # Installation and Usage
 
 Head to the code directory and build the project with `make` into an executable called **minishell**.
