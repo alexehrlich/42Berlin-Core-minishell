@@ -27,7 +27,7 @@ Read minishell.pdf (LINK) for detailed project instruction.
 # Installation and Usage
 
 Head to the code directory and build the project with `make` into an executable called **minishell**.
-Then use BASH :-)
+Start the minishell with `./minishell`.
 
 # Project structure
 
