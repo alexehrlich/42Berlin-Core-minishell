@@ -20,7 +20,7 @@ We learned to organize a big problem in different submodules, determine interfac
 * handling signals: control+D, control+C, control+\
 * environmental variables
 * inspecting the last exit code with $?
-* quote handling
+* quote handline
 
 Read minishell.pdf (LINK) for detailed project instruction. 
 
