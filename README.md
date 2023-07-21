@@ -36,9 +36,24 @@ The project was splitted into the submodules `Lexer/Expander`, `Parser` and `Exe
 The Lexer takes a stream of bytes, which the user types into the terminal via the `readline()` function.
 Through the implemented lexical analysis the bztestream is split up into different tokens of type _WORD_, 
 _I_RED(<)_, _O_RED(>)_, _I_RED_HD(<<)_ and _O_RED_APP(>>)_.
-It also remove whitespaces at the end, merge WORDS (hell"o" -> hello) and expand TBD.
+It also remove whitespaces at the end, merge WORDS (hell"o" -> hello) and expand variables (e.g. $PATH).
 
-![alt text]([http://url/to/img.png](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.find-das-bild.de%2F&psig=AOvVaw06pMuFqEozz4ilWcHkQc8J&ust=1689863430219000&source=images&cd=vfe&opi=89978449&ved=0CA0QjRxqFwoTCJib4P79moADFQAAAAAdAAAAABAD)https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.find-das-bild.de%2F&psig=AOvVaw06pMuFqEozz4ilWcHkQc8J&ust=1689863430219000&source=images&cd=vfe&opi=89978449&ved=0CA0QjRxqFwoTCJib4P79moADFQAAAAAdAAAAABAD)
+IMAGE of lexer workflow.
+
+## Parser
+
+The parser takes the linked list of tokens and converts it into a linked list of commands. Information about arguments, pipes, redirections and command type (BUILTIN or PATH) is extracted by the parsing algorithm and stored inside a command struct.
+Find the flow chart of the parsing algorithm here. (Link to the pdf)
+
+IMAGE of parser workflow.
+
+## Executor
+
+The executor takes the linked list of commands and executes them in the desired way. If there is only a single BUILTIN command (e.g. cd) called, the command gets executed in the current minishell-process. If a PATH command or piped mixec commands are called (e.g. echo  hello | grep hello) the minishell-process forks child processes to execute every command in its own child process and waits for its execution and grabs the exit code to give it back to the calling process.
+
+IMAGE of Executor workflow.
+
+
 
 
 
