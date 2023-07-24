@@ -1,6 +1,6 @@
 # 42Berlin-Core-minishell
 
-This group project of the 42 core curriculium is about writing our own shell program by recreating (at least some of) the functionality of BASH.
+This group project ([alexehrlich](https://github.com/alexehrlich) and [leonyannick](https://github.com/leonyannick)) of the 42 core curriculium is about writing our own shell program by recreating (at least some of) the functionality of BASH.
 Due to its lack of usage it is baptized ushelless. The learnings of the project on the other hand are anything else
 but useless.
 We learned to organize a big problem in different submodules, determine interfaces between them and organize our workflow with a shared repository.
