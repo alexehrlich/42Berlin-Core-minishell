@@ -42,13 +42,19 @@ The Lexer also removes whitespaces at the end, merges WORDS (hell"o" -> hello) a
 ## Parser
 
 The parser takes the linked list of tokens and generates another linked list of commands. Information about arguments, pipes, redirections and command type (BUILTIN or PATH) is extracted by the parsing algorithm and stored inside a command struct.
-Find the flow chart of the parsing algorithm here. (Link to the pdf)
+The Parser works as follows:
+
+
+![Parsing Algorithm Flowchart](https://github.com/alexehrlich/42Berlin-Core-minishell/blob/main/resources/Images/Flowchart%20Parser.png)
+
+The linked list of commands looks like this:
+
 
 ![Workflow of Parser](https://github.com/alexehrlich/42Berlin-Core-minishell/blob/main/resources/Images/PARSER.png)
 
 ## Executor
 
-The executor takes the linked list of commands and executes them in the desired way. If there is only a single BUILTIN command (e.g. cd) called, the command gets executed in the current minishell-process. If a PATH command or piped mixec commands are called (e.g. echo  hello | grep hello) the minishell-process forks child processes to execute every command in its own child process and waits for its execution and grabs the exit code to give it back to the calling process.
+The executor takes the linked list of commands and executes them in the desired way. If there is only a single BUILTIN command (e.g. cd) called, the command gets executed in the current minishell-process. If a PATH command or piped mixed commands are called (e.g. echo  hello | grep hello) the minishell-process forks child processes to execute every command in its own child process and waits for its execution and grabs the exit code to give it back to the calling process.
 
 ![Workflow of Executor](https://github.com/alexehrlich/42Berlin-Core-minishell/blob/main/resources/Images/EXECUTOR.png)
 
